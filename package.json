@@ -1,0 +1,59 @@
+{
+  "name": "react-image-slider",
+  "version": "1.0.0",
+  "description": "image slider component for react",
+  "main": "dist/ImageSlider.js",
+  "scripts": {
+    "example": "webpack-dev-server --mode development",
+    "build": "rollup -c",
+    "build:watch": "rollup -c --watch"
+  },
+  "keywords": [
+    "reactjs",
+    "react",
+    "react-component",
+    "react gallery",
+    "react slider",
+    "image gallery",
+    "image slider"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kimcoder/react-image-slider.git"
+  },
+  "author": {
+    "name": "kimcoder",
+    "email": "kimcoder@me.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kimcoder/react-image-slider/issues"
+  },
+  "homepage": "https://github.com/kimcoder/react-image-slider#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "prop-types": "^15.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@material-ui/core": "^3.0.2",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.2",
+    "eslint": "^5.5.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "rollup": "^0.65.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7"
+  }
+}
