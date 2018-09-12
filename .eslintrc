@@ -1,7 +1,14 @@
 {
-    "extends": ["react-app", "plugin:jsx-a11y/recommended"],
+    "extends": ["airbnb"],
     "parser": "babel-eslint",
-    "plugins": ["jsx-a11y"],
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
+    "env": {
+        "browser": true
+    },
     "rules": {
         "indent": ["error", 4],
         "quotes": ["error", "double"],
@@ -12,6 +19,10 @@
         "camelcase": "error",
         "no-return-assign": "off",
         "no-noninteractive-element-to-interactive-role": "off",
-        "no-console": ["error", { "allow": ["log", "error", "warn"] }]
+        "no-console": ["error", { "allow": ["log", "error", "warn"] }],
+        "react/jsx-indent" : ["error", 4],
+        "react/jsx-indent-props" : ["error", 4],
+        "import/no-extraneous-dependencies": "off",
+        "react/destructuring-assignment": "off"
     }
 }
