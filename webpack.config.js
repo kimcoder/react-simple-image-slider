@@ -12,14 +12,14 @@ module.exports = {
         rules: [{
             test: /\.jsx$/,
             exclude: /node_modules/,
-            use: "babel-loader"
-        }]
+            use: "babel-loader",
+        }],
     },
     mode: "production",
     plugins: [
     ],
     devServer: {
         contentBase: "./example",
-        host: "0.0.0.0"
-    }
+        host: "0.0.0.0",
+    },
 };
