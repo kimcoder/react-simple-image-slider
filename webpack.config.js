@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        index: "./example/App.jsx",
+        index: ["@babel/polyfill", "./example/App.jsx"],
     },
     output: {
         filename: "[name].js",

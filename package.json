@@ -1,7 +1,7 @@
 {
-  "name": "react-image-slider",
-  "version": "1.0.0",
-  "description": "image slider component for react",
+  "name": "react-simple-image-slider",
+  "version": "1.0.1",
+  "description": "simple image slider component for react",
   "main": "dist/ImageSlider.js",
   "scripts": {
     "example": "webpack-dev-server --mode development",
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kimcoder/react-image-slider.git"
+    "url": "https://github.com/kimcoder/react-simple-image-slider.git"
   },
   "author": {
     "name": "kimcoder",
@@ -27,9 +27,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kimcoder/react-image-slider/issues"
+    "url": "https://github.com/kimcoder/react-simple-image-slider/issues"
   },
-  "homepage": "https://github.com/kimcoder/react-image-slider#readme",
+  "homepage": "https://github.com/kimcoder/react-simple-image-slider#readme",
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "prop-types": "^15.6.2"
@@ -38,7 +38,8 @@
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@material-ui/core": "^3.0.2",
     "babel-eslint": "^7.2.3",

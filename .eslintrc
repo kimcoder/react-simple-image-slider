@@ -16,6 +16,7 @@
         "no-unused-vars": ["warn", { "args": "none" }],
         "class-methods-use-this": "off",
         "jsx-a11y/href-no-hash": "off",
+        "jsx-a11y/label-has-associated-control": "off",
         "camelcase": "error",
         "no-return-assign": "off",
         "no-noninteractive-element-to-interactive-role": "off",
