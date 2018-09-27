@@ -3,10 +3,6 @@ import image from "rollup-plugin-img";
 import pkg from "./package.json";
 
 const external = id => !id.startsWith("/") && !id.startsWith(".");
-const getBabelOptions = () => ({
-    runtimeHelpers: true,
-    plugins: ["@babel/transform-runtime"],
-});
 
 export default {
     input: "./src/ImageSlider.jsx",
@@ -15,7 +11,7 @@ export default {
         format: "cjs",
     },
     plugins: [
-        babel(getBabelOptions()),
+        babel({ runtimeHelpers: true }),
         image({ limit: 1000 }),
     ],
     external,
