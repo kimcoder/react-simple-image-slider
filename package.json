@@ -4,7 +4,7 @@
   "description": "simple image slider component for react",
   "main": "dist/ImageSlider.js",
   "scripts": {
-    "example": "webpack-dev-server --mode development",
+    "example": "webpack-dev-server --inline --mode development",
     "build": "rollup -c",
     "build:watch": "rollup -c --watch"
   },
