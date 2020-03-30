@@ -72,10 +72,10 @@ export default {
         width,
         height,
     }),
-    getImageSlide: (url, duration, x, isGpuRender) => assignObjects(basicSlide, {
+    getImageSlide: (url, duration, idx, isGpuRender) => assignObjects(basicSlide, {
         overflow: "hidden",
         transition: `${duration}s`,
         backgroundImage: `url(${url})`,
-        transform: isGpuRender ? `translate3d(${x}px, 0px, 0px)` : `translate(${x}px, 0px)`,
+        transform: isGpuRender ? `translate3d(${idx * 100}%, 0px, 0px)` : `translate(${idx * 100}%, 0px)`,
     }),
 };

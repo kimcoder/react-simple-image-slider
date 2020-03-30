@@ -93,8 +93,8 @@ class App extends React.Component {
                 </AppBar>
                 <SimpleImageSlider
                     style={{ margin: "0 auto", marginTop: "50px" }}
-                    width={896}
-                    height={504}
+                    width={200}
+                    height={200}
                     images={images}
                     showBullets={this.state.showBullets}
                     showNavs={this.state.showNavs}

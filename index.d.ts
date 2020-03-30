@@ -6,8 +6,8 @@ export interface RSISImage {
 }
 
 export interface RSISProps {
-    width: number;
-    height: number;
+    width: string;
+    height: string;
     images: RSISImage[],
 
     style?: CSSStyleDeclaration,
