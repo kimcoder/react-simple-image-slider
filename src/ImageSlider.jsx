@@ -13,7 +13,7 @@ class ImageSlider extends React.Component {
             idx: 0,
             sliding: false,
             currentSlideStyle: styles.getImageSlide(this.getImageUrl(0), this.props.slideDuration, 0),
-            nextSlideStyle: styles.getImageSlide(this.getImageUrl(1), this.props.slideDuration, this.props.width),
+            nextSlideStyle: styles.getImageSlide(this.getImageUrl(1), this.props.slideDuration, 1),
         };
         ImagePreLoader.load(this.getImageUrl(2));
     }
@@ -49,8 +49,8 @@ class ImageSlider extends React.Component {
         const toNext = (idx > this.state.idx);
         const currentUrl = this.getImageUrl(this.state.idx);
         const nextUrl = this.getImageUrl(idx);
-        const nextReadyX = toNext ? this.props.width : -this.props.width;
-        const currentOffetX = toNext ? -this.props.width : this.props.width;
+        const nextReadyX = toNext ? 1 : -1;
+        const currentOffetX = toNext ? -1 : 1;
 
         // ready to animation slides
         this.setState({

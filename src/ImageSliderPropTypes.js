@@ -5,8 +5,14 @@ const isValidNavStyle = prop => (/[1-2]/.test(prop) && typeof (prop) === "number
 export default {
     propTypes: {
         // Required
-        width: PropTypes.number.isRequired,
-        height: PropTypes.number.isRequired,
+        width: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]).isRequired,
+        height: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]).isRequired,
         images: PropTypes.arrayOf(PropTypes.shape({
             url: PropTypes.string.isRequired,
         })).isRequired,
