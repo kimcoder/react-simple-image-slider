@@ -74,6 +74,7 @@ If You want to see more detail source,<br>
 |**showBullets**|`Boolean`|`Optional`|Toggle Bullets|`true`|
 |**useGPURender**|`Boolean`|`Optional`|Toggle GPU Render|`true`|
 |**bgColor**|`String`|`Optional`|slider container's css background-color property|`#000000`|
+|**onClick**|`Function`|`Optional`|Image Click Callback function,<br>`onClick = (idx, event) => { }`<br>idx : number : clicked bullet index (begin from 0)||
 |**onClickNav**|`Function`|`Optional`|Arrow Navigation Callback function,<br>`onClickNav = (toRight) => { }`<br>toRight : Boolean : slide direction||
 |**onClickBullets**|`Function`|`Optional`|Bullets Callback function,<br>`onClickBullets = (idx) => { }`<br>idx : Number : clicked bullet index (begin from 0)||
 |**onStartSlide**|`Function`|`Optional`|Slide Transition Start function,<br>`onStartSlide = (idx, length) => { }`<br>idx : Number : start index (begin from 1)<br>length : Number : image length||

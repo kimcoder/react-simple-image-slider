@@ -28,6 +28,10 @@ class ImageSlider extends React.Component {
         }
     }
 
+    onClick = (event) => {
+        this.callPropsFunc("onClick", this.state.idx, event);
+    }
+
     onClickNav = (toRight) => {
         if (!this.isCanSlide(-1)) {
             return;
@@ -125,7 +129,7 @@ class ImageSlider extends React.Component {
     }
 
     renderSlide = length => (
-        <div style={styles.ImageSlider}>
+        <div style={styles.ImageSlider} onClick={this.onClick}>
             <div style={this.state.currentSlideStyle} onTransitionEnd={this.onSlideEnd} />
             <div style={this.state.nextSlideStyle} />
         </div>

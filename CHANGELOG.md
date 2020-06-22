@@ -1,6 +1,10 @@
 # Change Log
 
-1.0.3 (March 30, 2018)
+1.0.4 (June 22, 2020)
+- add 'onClick' props. 
+  - can handle callback when image was clicked 
+
+1.0.3 (March 30, 2020)
 - modify props types about width and height. ( number -> string or number )
   - can set value like this. '100%' or '100px' or 100
 
