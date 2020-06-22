@@ -14,6 +14,20 @@ import Select from "@material-ui/core/Select";
 import SimpleImageSlider from "..";
 
 class App extends React.Component {
+    listSubHeader = <ListSubheader><h1>Slider Settings</h1></ListSubheader>;
+
+    toggleOptions = ["useGPURender", "showNavs", "showBullets"];
+
+    images = [
+        { url: "images/1.jpg" },
+        { url: "images/2.jpg" },
+        { url: "images/3.jpg" },
+        { url: "images/4.jpg" },
+        { url: "images/5.jpg" },
+        { url: "images/6.jpg" },
+        { url: "images/7.jpg" },
+    ];
+
     constructor() {
         super();
         this.state = {
@@ -33,6 +47,10 @@ class App extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log("[App componentDidUpdate]");
+    }
+
+    onClick = (idx, event) => {
+        console.log(`[App onClick] ${idx} ${event.target}`);
     }
 
     onClickNav = (toRight) => {
@@ -62,18 +80,7 @@ class App extends React.Component {
     onChangeSelect = event => this.setState({ [event.target.name]: event.target.value });
 
     render() {
-        const listSubHeader = <ListSubheader><h1>Slider Settings</h1></ListSubheader>;
-        const toggleOptions = ["useGPURender", "showNavs", "showBullets"];
-        const images = [
-            { url: "images/1.jpg" },
-            { url: "images/2.jpg" },
-            { url: "images/3.jpg" },
-            { url: "images/4.jpg" },
-            { url: "images/5.jpg" },
-            { url: "images/6.jpg" },
-            { url: "images/7.jpg" },
-        ];
-        const slideText = this.state.slideIndexText || `${1} / ${images.length}`;
+        const slideText = this.state.slideIndexText || `${1} / ${this.images.length}`;
 
         return (
             <div style={{ textAlign: "center" }}>
@@ -93,14 +100,15 @@ class App extends React.Component {
                 </AppBar>
                 <SimpleImageSlider
                     style={{ margin: "0 auto", marginTop: "50px" }}
-                    width={200}
-                    height={200}
-                    images={images}
+                    width={896}
+                    height={504}
+                    images={this.images}
                     showBullets={this.state.showBullets}
                     showNavs={this.state.showNavs}
                     useGPURender={this.state.useGPURender}
                     navStyle={this.state.navStyle}
                     slideDuration={this.state.slideDuration}
+                    onClick={this.onClick}
                     onClickNav={this.onClickNav}
                     onClickBullets={this.onClickBullets}
                     onStartSlide={this.onStartSlide}
@@ -114,8 +122,8 @@ class App extends React.Component {
                 {
                     // Slide Settings
                 }
-                <List subheader={listSubHeader} style={{ margin: "0 auto 100px auto", width: 900, textAlign: "left" }}>
-                    {toggleOptions.map(value => (
+                <List subheader={this.listSubHeader} style={{ margin: "0 auto 100px auto", width: 900, textAlign: "left" }}>
+                    {this.toggleOptions.map(value => (
                         <ListItem key={value} button onClick={this.onToggleOptions(value)}>
                             <Checkbox checked={this.state[value]} disableRipple />
                             <ListItemText primary={`${value}`} />

@@ -24,6 +24,7 @@ export default {
         showBullets: PropTypes.bool,
         bgColor: PropTypes.string,
         useGPURender: PropTypes.bool,
+        onClick: PropTypes.func,
         onClickNav: PropTypes.func,
         onClickBullets: PropTypes.func,
         onStartSlide: PropTypes.func,

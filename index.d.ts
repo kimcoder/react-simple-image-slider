@@ -9,7 +9,6 @@ export interface RSISProps {
     width: string;
     height: string;
     images: RSISImage[],
-
     style?: CSSStyleDeclaration,
     slideDuration?: number;
     showNavs?: boolean;
@@ -17,6 +16,7 @@ export interface RSISProps {
     bgColor?: string;
     useGPURender?: boolean;
     navStyle?: 1 | 2;
+    onClick?: (idx: number, event: React.SyntheticEvent) => void;
     onClickNav?: (toRight: boolean) => void;
     onClickBullets?: (idx: number) => void;
     onStartSlide?: (current: number, length: number) => void;
