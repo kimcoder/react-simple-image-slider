@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "declaration":  true,
+    "declarationDir":  "./dist",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+
+    "jsx": "react",
+    "types": ["react"],
+    "outDir": "dist"
+  },
+  "include": [
+    "src/**/*",
+    "example/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

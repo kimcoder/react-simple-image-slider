@@ -6,7 +6,8 @@
   "scripts": {
     "example": "webpack-dev-server --inline --mode development",
     "build": "rollup -c",
-    "build:watch": "rollup -c --watch"
+    "build:watch": "rollup -c --watch",
+    "prebuild": "rm -rf dist"
   },
   "keywords": [
     "reactjs",
@@ -59,6 +60,7 @@
     "rollup": "^2.26.5",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-img": "^1.1.0",
+    "rollup-plugin-typescript2": "^0.27.2",
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
