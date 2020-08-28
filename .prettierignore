@@ -1,0 +1,7 @@
+dist
+src
+example
+rollup.config.js
+webpack.config.js
+*.json
+*.md
