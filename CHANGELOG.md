@@ -1,5 +1,9 @@
 # Change Log
 
+2.0.0 (November 15, 2020)
+- development by typescript
+- migration functional component
+
 1.0.4 (June 22, 2020)
 - add 'onClick' props. 
   - can handle callback when image was clicked 

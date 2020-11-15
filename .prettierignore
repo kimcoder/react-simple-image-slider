@@ -1,0 +1,7 @@
+dist
+src
+example
+webpack.config.js
+*.json
+*.md
+.babelrc

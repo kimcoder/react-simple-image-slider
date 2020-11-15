@@ -2,8 +2,13 @@
 .vscode
 .git*
 
+src
 example
 node_modules
 npm-debug.log
 yarn-debug.log
 yarn-error.log
+demo.gif
+rollup.config.js
+webpack.config.js
+tsconfig.json

@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        index: ["@babel/polyfill", "./example/App.jsx"],
+        index: ["./example/App.jsx"],
     },
     output: {
         filename: "[name].js",
@@ -20,6 +20,8 @@ module.exports = {
     ],
     devServer: {
         contentBase: "./example",
-        host: "0.0.0.0",
+        host: "localhost",
+        inline: true,
+        open: true
     },
 };
