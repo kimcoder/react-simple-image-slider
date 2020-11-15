@@ -1,2 +1,5 @@
 node_modules/* 
 dist/*
+example/index.js
+webpack.config.js
+rollup.config.js

@@ -3,7 +3,7 @@
     [
       "@babel/preset-env",
       {
-        "loose": true,
+        "useBuiltIns": "usage",
         "modules": false,
         "targets": "> 0.25%, not dead"
       }

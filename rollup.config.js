@@ -1,26 +1,16 @@
-import babel from "rollup-plugin-babel";
-import image from "rollup-plugin-img";
-import typescript from 'rollup-plugin-typescript2';
-import pkg from "./package.json";
+import { getBabelOutputPlugin } from '@rollup/plugin-babel';
+import image from '@rollup/plugin-image';
+import typescript from '@rollup/plugin-typescript';
+import babelConfig from './babel.config';
 
-const external = id => !id.startsWith("/") && !id.startsWith(".");
+const external = (id) => !id.startsWith('/') && !id.startsWith('.');
 
 export default {
-    input: "src/index.ts",
-    output: {
-        file: pkg.main,
-        format: "esm",
-    },
-    plugins: [
-        babel({ runtimeHelpers: true }),
-        image({ limit: 1000 }),
-        typescript({
-        tsconfig: 'tsconfig.json',
-        tsconfigOverride: {
-            include: [ 'src/**/*' ],
-            exclude: [ 'node_modules', 'example' ]
-          }
-        })
-    ],
-    external,
+  input: 'src/index.ts',
+  output: {
+    dir: 'dist',
+    format: 'esm'
+  },
+  plugins: [typescript(), getBabelOutputPlugin({ presets: ['@babel/preset-env'] }), image({ limit: 1000 })],
+  external
 };

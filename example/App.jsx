@@ -15,7 +15,6 @@ import SimpleImageSlider from "..";
 
 class App extends React.Component {
     listSubHeader = <ListSubheader><h1>Slider Settings</h1></ListSubheader>;
-
     toggleOptions = ["useGPURender", "showNavs", "showBullets"];
 
     images = [

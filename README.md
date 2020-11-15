@@ -10,7 +10,7 @@
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-url]: https://github.com/kimcoder/react-simple-image-slider/blob/master/LICENSE
 
-Simple ImageSlider Component for ReactJS v16.0<br>
+Simple ImageSlider Component for ReactJS v16.13<br>
 - Just Two Elements will be used. (for display images)
 - Support GPU Render, by default. 
 - Support Image Preload.
@@ -103,7 +103,7 @@ npm run build:watch     // build watch mode
 // yarn
 yarn example
 yarn build
-yarn buidl:watch
+yarn build:watch
 ```
 If you want to run a test app, should build before do that.<br>
 
