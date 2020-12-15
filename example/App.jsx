@@ -11,24 +11,24 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
-import SimpleImageSlider from "..";
+import SimpleImageSlider from './../src/index.ts'
 
 class App extends React.Component {
     listSubHeader = <ListSubheader><h1>Slider Settings</h1></ListSubheader>;
     toggleOptions = ["useGPURender", "showNavs", "showBullets"];
 
     images = [
-        { url: "images/1.jpg" },
-        { url: "images/2.jpg" },
-        { url: "images/3.jpg" },
-        { url: "images/4.jpg" },
-        { url: "images/5.jpg" },
-        { url: "images/6.jpg" },
-        { url: "images/7.jpg" },
+        { source: { url: "images/1.jpg"} },
+        { source: { url: "images/2.jpg"} },
+        { source: { url: "images/3.jpg"} },
+        { source: { url: "images/4.jpg"} },
+        { source: { url: "images/5.jpg"} },
+        { source: { url: "images/6.jpg"} },
+        { source: { url: "images/7.jpg"} },
     ];
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             useGPURender: true,
             showNavs: true,
@@ -102,6 +102,7 @@ class App extends React.Component {
                     width={896}
                     height={504}
                     images={this.images}
+                    imgUrlAccessor="source.url"
                     showBullets={this.state.showBullets}
                     showNavs={this.state.showNavs}
                     useGPURender={this.state.useGPURender}

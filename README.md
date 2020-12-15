@@ -66,7 +66,8 @@ If You want to see more detail source,<br>
 |:--:|:--:|:-----:|:----------|:------|
 |**width**|`Number`|`Required`|Image Slider Width||
 |**height**|`Number`|`Required`|Image Slider Height||
-|**images**|`Array`|`Required`|Images,<br>Array Elements should be like this structure,<br>{ url: "" }||
+|**images**|`Array`|`Required`|Images,<br>Array Elements should be of object type. Default key with image url is `{ url: "" }`||
+|**imgUrlAccessor**|`String`|`Required`|Path to url value in the `images` array elements object.<br>I.e.: `imgUrlAccessor="source.image_url"` for `{ source: {image_url: "" }}`|`url`||
 |**style**|`String`|`Optional`|css object||
 |**slideDuration**|`Number`|`Optional`|css transition-duration property|`0.5`|
 |**navStyle**|`Number`|`Optional`|Arrow Navgation Style,<br>1 or 2|`1`|

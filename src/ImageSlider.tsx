@@ -2,11 +2,13 @@ import React from "react";
 import ImagePreLoader from "./ImageSliderPreLoader";
 import styles from "./ImageSliderStyle";
 import ImageSliderNavigation, { ImageSliderNavDirection, ImageSliderNavStyle } from './ImageSliderNavigation';
+import { getValue } from './helpers'
 
 export type SimpleImageSliderProps = {
   width: number | string;
   height: number | string;
-  images: Array<{ url: string }>;
+  images: Array<Record<string, unknown>>;
+  imgUrlAccessor: string;
   style?: React.CSSProperties;
   showNavs: boolean;
   showBullets: boolean;
@@ -25,6 +27,7 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
   width,
   height,
   images,
+  imgUrlAccessor = "url",
   showNavs,
   showBullets,
   style = undefined,
@@ -42,8 +45,8 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
   const [slideIdx, setSlideIdx] = React.useState(0);
   const [slideDirection, setSlideDirection] = React.useState(ImageSliderNavDirection.RIGHT);
   const [isSliding, setIsSliding] = React.useState(false);
-  const [currentSliderStyle, setCurrentSlideStyle] = React.useState(styles.getImageSlide(images[0].url, slideDuration, 0, useGPURender));
-  const [nextSliderStyle, setNextSliderStyle] = React.useState(styles.getImageSlide(images[1].url, slideDuration, 1, useGPURender));
+  const [currentSliderStyle, setCurrentSlideStyle] = React.useState(styles.getImageSlide(getValue(images[0], imgUrlAccessor), slideDuration, 0, useGPURender));
+  const [nextSliderStyle, setNextSliderStyle] = React.useState(styles.getImageSlide(getValue(images[1], imgUrlAccessor), slideDuration, 1, useGPURender));
 
   const handleClick = React.useCallback((event: React.SyntheticEvent) => {
     onClick && onClick(slideIdx, event);
@@ -70,8 +73,8 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
 
   const slide = (idx: number) => {
     const toNext: boolean = idx > slideIdx;
-    const currentUrl: string = images[slideIdx].url;
-    const nextUrl: string = images[idx].url;
+    const currentUrl: string = getValue(images[slideIdx], imgUrlAccessor);
+    const nextUrl: string = getValue(images[idx], imgUrlAccessor);
     const nextReadyX: 1 | -1 = toNext ? 1 : -1;
 
     setSlideIdx(idx);
@@ -81,15 +84,15 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
     setIsSliding(true);
 
     onStartSlide && onStartSlide(idx + 1, images.length);
-    idx + 2 < images.length && ImagePreLoader.load(images[idx + 2].url);
+    idx + 2 < images.length && ImagePreLoader.load(getValue(images[idx + 2], imgUrlAccessor));
   };
 
   React.useEffect(() => {
     if (isSliding) {
       setTimeout(() => {
         const toRight: boolean = slideDirection === ImageSliderNavDirection.RIGHT;
-        const currentUrl: string = images[toRight ? slideIdx - 1 : slideIdx + 1].url;
-        const nextUrl: string = images[slideIdx].url;
+        const currentUrl: string = getValue(images[toRight ? slideIdx - 1 : slideIdx + 1], imgUrlAccessor);
+        const nextUrl: string = getValue(images[slideIdx], imgUrlAccessor);
         const currentOffetX: 1 | -1 = toRight ? -1 : 1;
 
         setCurrentSlideStyle(styles.getImageSlide(currentUrl, slideDuration, currentOffetX, useGPURender));
@@ -99,7 +102,7 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
   }, [slideIdx, isSliding]);
 
   const handleSlideEnd = React.useCallback(() => {
-    setCurrentSlideStyle(styles.getImageSlide(images[slideIdx].url, 0, 0, useGPURender));
+    setCurrentSlideStyle(styles.getImageSlide(getValue(images[slideIdx], imgUrlAccessor), 0, 0, useGPURender));
     setIsSliding(false);
     onCompleteSlide && onCompleteSlide(slideIdx + 1, images.length);
   }, [slideIdx]);
