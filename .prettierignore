@@ -1,7 +1,5 @@
 dist
-src
-example
-webpack.config.js
+example/index.js
 *.json
 *.md
 .babelrc
