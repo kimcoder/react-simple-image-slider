@@ -20,7 +20,7 @@ Simple ImageSlider Component for ReactJS v16.13<br>
 
 # Live demo
 
-- <a href="https://kimcoder.github.io/demo/react-simple-image-slider/" target="_blank">Go to Site</a><br><br>
+- <a href="https://kimcoder.github.io/react-simple-image-slider" target="_blank">Go to Site</a><br><br>
   ![demo gif](https://github.com/kimcoder/react-simple-image-slider/raw/master/demo.gif)
 
 # Install
