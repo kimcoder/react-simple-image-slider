@@ -10,6 +10,6 @@ export default {
     dir: 'dist',
     format: 'esm'
   },
-  plugins: [typescript(), getBabelOutputPlugin({ presets: ['@babel/preset-env'] }), image({ limit: 1000 })],
+  plugins: [typescript({ exclude: 'example/*' }), getBabelOutputPlugin({ presets: ['@babel/preset-env'] }), image({ limit: 1000 })],
   external
 };

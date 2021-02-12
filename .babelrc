@@ -5,6 +5,7 @@
       {
         "useBuiltIns": "usage",
         "modules": false,
+        "corejs": 3,
         "targets": "> 0.25%, not dead"
       }
     ],
@@ -12,7 +13,6 @@
     "@babel/preset-typescript"
   ],
   "plugins": [
-    "@babel/plugin-transform-runtime",
     "@babel/plugin-proposal-class-properties"
   ],
   "ignore": ["node_modules/**"]
