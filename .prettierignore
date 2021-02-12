@@ -1,5 +1,4 @@
 dist
 example/index.js
 *.json
-*.md
 .babelrc
