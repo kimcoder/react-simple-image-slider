@@ -58,9 +58,10 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
       if (isSliding) {
         return;
       }
+      const isRight: boolean = direction === ImageSliderNavDirection.RIGHT;
 
-      onClickNav?.(true);
-      slide(direction === ImageSliderNavDirection.RIGHT ? slideIdx + 1 : slideIdx - 1);
+      onClickNav?.(isRight);
+      slide(isRight ? slideIdx + 1 : slideIdx - 1);
     },
     [slideIdx, isSliding]
   );
