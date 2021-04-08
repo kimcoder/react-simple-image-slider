@@ -14,6 +14,8 @@ export type SimpleImageSliderProps = {
   slideDuration?: number;
   bgColor?: string;
   useGPURender?: boolean;
+  navSize?: number;
+  navMargin?: number;
   navStyle?: ImageSliderNavStyle;
   onClick?: (idx: number, event: React.SyntheticEvent) => void;
   onClickNav?: (toRight: boolean) => void;
@@ -32,6 +34,8 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
   slideDuration = 0.5,
   bgColor = '#000',
   useGPURender = true,
+  navSize = 50,
+  navMargin = 30,
   navStyle = ImageSliderNavStyle.NORMAL,
   onClick = undefined,
   onClickNav = undefined,
@@ -125,10 +129,22 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
 
         {/* Render Navigation */}
         {showNavs && images.length > 0 && slideIdx > 0 && (
-          <ImageSliderNavigation direction={ImageSliderNavDirection.LEFT} navStyle={navStyle} onClickNav={handleClickNav} />
+          <ImageSliderNavigation
+            direction={ImageSliderNavDirection.LEFT}
+            navStyle={navStyle}
+            navSize={navSize}
+            navMargin={navMargin}
+            onClickNav={handleClickNav}
+          />
         )}
         {showNavs && images.length > 0 && slideIdx < images.length - 1 && (
-          <ImageSliderNavigation direction={ImageSliderNavDirection.RIGHT} navStyle={navStyle} onClickNav={handleClickNav} />
+          <ImageSliderNavigation
+            direction={ImageSliderNavDirection.RIGHT}
+            navStyle={navStyle}
+            navSize={navSize}
+            navMargin={navMargin}
+            onClickNav={handleClickNav}
+          />
         )}
 
         {/* Render Bullets */}
