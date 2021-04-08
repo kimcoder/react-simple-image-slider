@@ -1,3 +1,5 @@
+import { ImageSliderNavDirection } from './ImageSliderNavigation';
+
 const basic = {
   display: 'block',
   margin: '0',
@@ -69,5 +71,13 @@ export default {
       transition: `${duration}s`,
       backgroundImage: `url(${url})`,
       transform: isGpuRender ? `translate3d(${idx * 100}%, 0px, 0px)` : `translate(${idx * 100}%, 0px)`
+    } as React.CSSProperties),
+  getNavStyle: (direction: ImageSliderNavDirection, size: number, margin: number): React.CSSProperties =>
+    ({
+      ...basic,
+      ...basicNav,
+      ...(direction === ImageSliderNavDirection.LEFT ? { left: `${margin}px` } : { right: `${margin}px` }),
+      marginTop: `-${Math.floor(size / 2)}px`,
+      width: `${size}px`
     } as React.CSSProperties)
 };

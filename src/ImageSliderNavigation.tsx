@@ -1,9 +1,7 @@
 import React from 'react';
 import styles from './ImageSliderStyle';
-import ImageNavArrowLeft1 from './images/arrow-left-1.png';
-import ImageNavArrowLeft2 from './images/arrow-left-2.png';
-import ImageNavArrowRight1 from './images/arrow-right-1.png';
-import ImageNavArrowRight2 from './images/arrow-right-2.png';
+import ImageNavArrowBold from './images/arrow-bold.svg';
+import ImageNavArrowNormal from './images/arrow-normal.svg';
 
 export enum ImageSliderNavStyle {
   NORMAL = 1,
@@ -17,27 +15,21 @@ export enum ImageSliderNavDirection {
 
 type ImageSliderNavigationProps = {
   navStyle: ImageSliderNavStyle;
+  navSize: number;
+  navMargin: number;
   direction: ImageSliderNavDirection;
   onClickNav: (direction: ImageSliderNavDirection) => (event: React.SyntheticEvent<HTMLButtonElement>) => void;
 };
 
 const altNavArrowLeft = 'slide to left';
 const altNavArrowRight = 'slide to right';
-const images: { [key: string]: string } = {
-  [`image-${ImageSliderNavDirection.LEFT}-${ImageSliderNavStyle.NORMAL}`]: ImageNavArrowLeft1,
-  [`image-${ImageSliderNavDirection.RIGHT}-${ImageSliderNavStyle.NORMAL}`]: ImageNavArrowRight1,
-  [`image-${ImageSliderNavDirection.LEFT}-${ImageSliderNavStyle.BOLD}`]: ImageNavArrowLeft2,
-  [`image-${ImageSliderNavDirection.RIGHT}-${ImageSliderNavStyle.BOLD}`]: ImageNavArrowRight2
-};
 
 const ImageSliderNavigation: React.FC<ImageSliderNavigationProps> = (props: ImageSliderNavigationProps) => {
   return (
-    <button
-      type="button"
-      style={props.direction === ImageSliderNavDirection.LEFT ? styles.NavLeft : styles.NavRight}
-      onClick={props.onClickNav(props.direction)}>
+    <button type="button" style={styles.getNavStyle(props.direction, props.navSize, props.navMargin)} onClick={props.onClickNav(props.direction)}>
       <img
-        src={images[`image-${props.direction}-${props.navStyle}`]}
+        src={props.navStyle === ImageSliderNavStyle.NORMAL ? ImageNavArrowNormal : ImageNavArrowBold}
+        style={{ width: '100%', ...(props.direction === ImageSliderNavDirection.RIGHT && { transform: 'rotate(180deg)' }) }}
         alt={props.direction === ImageSliderNavDirection.LEFT ? altNavArrowLeft : altNavArrowRight}
       />
     </button>
