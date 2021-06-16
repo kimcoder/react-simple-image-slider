@@ -12,6 +12,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import SimpleImageSlider from '../dist';
+import Input from '@material-ui/core/Input';
 
 const IMAGES = [
   { url: 'images/1.jpg' },
@@ -28,6 +29,8 @@ type SliderOptions = {
   showNavs: boolean;
   showBullets: boolean;
   navStyle: 1 | 2;
+  navSize: number;
+  navMargin: number;
   duration: number;
   bgColor: string;
 };
@@ -38,6 +41,8 @@ const App: React.FC = () => {
     showNavs: true,
     showBullets: true,
     navStyle: 1,
+    navSize: 50,
+    navMargin: 30,
     duration: 0.5,
     bgColor: '#000'
   });
@@ -70,23 +75,17 @@ const App: React.FC = () => {
     (key: string, value: boolean | number | string) => () => {
       console.log(`[App updateOptions] ${key} ${value}`);
       switch (key) {
-        case 'useGPURender':
-          setSliderOptions({ ...sliderOptions, useGPURender: value as boolean });
-          break;
-        case 'showNavs':
-          setSliderOptions({ ...sliderOptions, showNavs: value as boolean });
-          break;
-        case 'showBullets':
-          setSliderOptions({ ...sliderOptions, showBullets: value as boolean });
-          break;
         case 'navStyle':
           setSliderOptions({ ...sliderOptions, navStyle: value as 1 | 2 });
           break;
+        case 'useGPURender':
+        case 'showNavs':
+        case 'showBullets':
         case 'duration':
-          setSliderOptions({ ...sliderOptions, duration: value as number });
-          break;
         case 'bgColor':
-          setSliderOptions({ ...sliderOptions, bgColor: value as string });
+        case 'navSize':
+        case 'navMargin':
+          setSliderOptions({ ...sliderOptions, [key]: value });
           break;
       }
     },
@@ -125,6 +124,8 @@ const App: React.FC = () => {
         showNavs={sliderOptions.showNavs}
         useGPURender={sliderOptions.useGPURender}
         navStyle={sliderOptions.navStyle}
+        navSize={sliderOptions.navSize}
+        navMargin={sliderOptions.navMargin}
         slideDuration={sliderOptions.duration}
         onClick={onClick}
         onClickNav={onClickNav}
@@ -151,7 +152,7 @@ const App: React.FC = () => {
             </ListItem>
           ))}
         <ListItem>
-          <FormControl component="fieldset">
+          <FormControl>
             <InputLabel>NavStyle</InputLabel>
             <Select value={sliderOptions.navStyle} onChange={onChangeSelect} inputProps={{ name: 'navStyle' }}>
               <MenuItem value={1}>1</MenuItem>
@@ -168,6 +169,28 @@ const App: React.FC = () => {
               <MenuItem value={0.7}>0.9</MenuItem>
               <MenuItem value={1.2}>1.2</MenuItem>
             </Select>
+          </FormControl>
+        </ListItem>
+        <ListItem>
+          <FormControl>
+            <InputLabel>Navigation Size</InputLabel>
+            <Input
+              value={sliderOptions.navSize}
+              type="number"
+              name="navSize"
+              onChange={(event) => updateOptions(event.target.name, event.target.value)()}
+            />
+          </FormControl>
+        </ListItem>
+        <ListItem>
+          <FormControl>
+            <InputLabel>Navigation Margin</InputLabel>
+            <Input
+              value={sliderOptions.navMargin}
+              type="number"
+              name="navMargin"
+              onChange={(event) => updateOptions(event.target.name, event.target.value)()}
+            />
           </FormControl>
         </ListItem>
       </List>
