@@ -4,14 +4,14 @@
 [![Download Count][download-image]][download-url]
 [![GitHub license][license-image]][license-url]
 
-[react-image]: https://img.shields.io/badge/ReactJS-%5E16.13.1-blue.svg
+[react-image]: https://img.shields.io/badge/ReactJS-%5E17.x-blue.svg
 [react-url]: https://reactjs.org
 [download-image]: http://img.shields.io/npm/dm/react-simple-image-slider.svg?style=flat
 [download-url]: http://www.npmjs.com/package/react-simple-image-slider
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-url]: https://github.com/kimcoder/react-simple-image-slider/blob/master/LICENSE
 
-Simple ImageSlider Component for ReactJS v16.13<br>
+Simple ImageSlider Component for ReactJS v17<br>
 
 - Just Two Elements will be used. (for display images)
 - Support GPU Render, by default.
