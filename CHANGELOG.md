@@ -1,5 +1,10 @@
 # Change Log
 
+### 2.1.2 (June 16, 2021)
+
+- add 'startIndex' props.
+  - can set start index of image slider
+
 ### 2.1.1 (June 16, 2021)
 
 - fix issue in SSR mode

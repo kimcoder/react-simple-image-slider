@@ -11,6 +11,7 @@ export type SimpleImageSliderProps = {
   style?: React.CSSProperties;
   showNavs: boolean;
   showBullets: boolean;
+  startIndex?: number;
   slideDuration?: number;
   bgColor?: string;
   useGPURender?: boolean;
@@ -30,6 +31,7 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
   images,
   showNavs,
   showBullets,
+  startIndex = 0,
   style = undefined,
   slideDuration = 0.5,
   bgColor = '#000',
@@ -44,7 +46,7 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
   onCompleteSlide = undefined
 }: SimpleImageSliderProps) => {
   const rootStyle: React.CSSProperties = useMemo(() => styles.getRootContainer(width, height, bgColor), [width, height, bgColor]);
-  const [slideIdx, setSlideIdx] = useState(0);
+  const [slideIdx, setSlideIdx] = useState(startIndex < images.length ? startIndex : 0);
   const [slideDirection, setSlideDirection] = useState(ImageSliderNavDirection.RIGHT);
   const [isSliding, setIsSliding] = useState(false);
   const [currentSliderStyle, setCurrentSlideStyle] = useState(styles.getImageSlide(images[0].url, slideDuration, 0, useGPURender));
