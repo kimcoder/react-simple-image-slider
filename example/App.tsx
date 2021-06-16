@@ -122,6 +122,7 @@ const App: React.FC = () => {
         images={IMAGES}
         showBullets={sliderOptions.showBullets}
         showNavs={sliderOptions.showNavs}
+        startIndex={0}
         useGPURender={sliderOptions.useGPURender}
         navStyle={sliderOptions.navStyle}
         navSize={sliderOptions.navSize}
