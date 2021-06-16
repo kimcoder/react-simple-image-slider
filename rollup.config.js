@@ -8,7 +8,7 @@ export default {
   input: 'src/index.ts',
   output: {
     dir: 'dist',
-    format: 'esm'
+    format: 'cjs'
   },
   plugins: [typescript({ exclude: 'example/*' }), getBabelOutputPlugin({ presets: ['@babel/preset-env'] }), image({ limit: 1000 })],
   external
