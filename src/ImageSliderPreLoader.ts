@@ -2,10 +2,22 @@ const ImageSliderPreLoader = (() => {
   const loadedUrl: { [key: string]: boolean } = {};
   const loadQueue: Array<string> = [];
   const loaderCount = 3;
-  const loaderPool: Array<HTMLImageElement> = new Array(loaderCount).fill(0).map(() => new Image());
+  let loaderPool: Array<HTMLImageElement>;
 
+  const init = () => {
+    if (typeof Image !== 'function') return;
+
+    loaderPool = new Array(loaderCount).fill(0).map(() => new Image());
+  };
+
+  init();
   return {
     load: (url: string) => {
+      if (!loaderPool) {
+        init();
+        return;
+      }
+
       if (!url || loadedUrl[url]) {
         return;
       }

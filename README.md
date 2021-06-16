@@ -16,7 +16,8 @@ Simple ImageSlider Component for ReactJS v17<br>
 - Just Two Elements will be used. (for display images)
 - Support GPU Render, by default.
 - Support Image Preload.
-- Selectable Navgation Styles.
+- Support SSR. ( server-side-rendering )
+- Selectable Navigation Styles.
 
 # Live demo
 
