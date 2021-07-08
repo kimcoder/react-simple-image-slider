@@ -56,6 +56,8 @@ const App = () => {
         width={896}
         height={504}
         images={images}
+        showBullets={true}
+        showNavs={true}
       />
     </div>
   );
@@ -78,9 +80,9 @@ If You want to see more detail source,<br>
 |    **navStyle**     |  `Number`  | `Optional` | Arrow Navgation Style,<br>1 or 2                                                                                                                                  | `1`       |
 |     **navSize**     |  `Number`  | `Optional` | Arrow Size                                                                                                                                                        | 50        |
 |    **navMargin**    |  `Number`  | `Optional` | Arrow Margin                                                                                                                                                      | 30        |
-|    **showNavs**     | `Boolean`  | `Optional` | Toggle Arrow                                                                                                                                                      |
+|    **showNavs**     | `Boolean`  | `Required` | Toggle Arrow                                                                                                                                                      |
 |   **startIndex**    |  `Number`  | `Optional` | start Index of Slide                                                                                                                                              | 0         |
-|   **showBullets**   | `Boolean`  | `Optional` | Toggle Bullets                                                                                                                                                    | `true`    |
+|   **showBullets**   | `Boolean`  | `Required` | Toggle Bullets                                                                                                                                                    | `true`    |
 |  **useGPURender**   | `Boolean`  | `Optional` | Toggle GPU Render                                                                                                                                                 | `true`    |
 |     **bgColor**     |  `String`  | `Optional` | slider container's css background-color property                                                                                                                  | `#000000` |
 |     **onClick**     | `Function` | `Optional` | Image Click Callback function,<br>`onClick = (idx, event) => { }`<br>idx : number : clicked bullet index (begin from 0)                                           |           |
