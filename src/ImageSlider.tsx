@@ -124,8 +124,8 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
     <div style={{ ...rootStyle, ...style }}>
       <div style={styles.getSubContainer(width, height)}>
         {/* Render Slider */}
-        <div style={styles.ImageSlider} onClick={handleClick}>
-          <div style={currentSliderStyle} onTransitionEnd={handleSlideEnd} />
+        <div style={styles.ImageSlider} onClick={handleClick} className="rsis-container">
+          <div style={currentSliderStyle} onTransitionEnd={handleSlideEnd} className="rsis-image" />
           {images.length > 1 && <div style={nextSliderStyle} />}
         </div>
 

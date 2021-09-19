@@ -1,5 +1,11 @@
 # Change Log
 
+### 2.2.0 (September 19, 2021)
+
+- add className for image slider
+  - `.rsis-container`
+  - `.rsis-image`
+
 ### 2.1.2 (June 16, 2021)
 
 - add 'startIndex' props.
