@@ -13,6 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import SimpleImageSlider from '../dist';
 import Input from '@material-ui/core/Input';
+import './app.scss';
 
 const IMAGES = [
   { url: 'images/1.jpg' },
@@ -100,7 +101,7 @@ const App: React.FC = () => {
   );
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center' }} className="root">
       <CssBaseline />
       <AppBar style={{ position: 'relative', height: 140, textAlign: 'center' }}>
         <h1 style={{ marginBottom: 5 }}>React Simple Image Slider Example</h1>
