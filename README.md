@@ -93,6 +93,25 @@ If You want to see more detail,<br>
 
 - [`example/app.tsx`](https://github.com/kimcoder/react-simple-image-slider/blob/master/example/App.tsx)<br>
 
+# Style customize
+
+- can customize by className with `!important`;
+
+```
+.your-app {
+  .rsis-container {
+    // do something
+  }
+}
+
+.your-app {
+  .rsis-image {
+    background-size: contain !important;
+  }
+}
+
+```
+
 # Development
 
 ### directory & source
