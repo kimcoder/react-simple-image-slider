@@ -1,6 +1,6 @@
 {
   "name": "react-simple-image-slider",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "simple image slider component for react",
   "main": "dist/index.js",
   "scripts": {
