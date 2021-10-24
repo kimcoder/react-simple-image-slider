@@ -37,7 +37,7 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
   showBullets,
   loop = true,
   autoPlay = false,
-  autoPlayDelay = 0.7,
+  autoPlayDelay = 2.0,
   startIndex = 0,
   style = undefined,
   slideDuration = 0.5,
