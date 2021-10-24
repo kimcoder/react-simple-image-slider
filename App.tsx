@@ -13,21 +13,17 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import SimpleImageSlider from '../dist';
 import Input from '@material-ui/core/Input';
+import './app.scss';
 
-const IMAGES = [
-  { url: 'images/1.jpg' },
-  { url: 'images/2.jpg' },
-  { url: 'images/3.jpg' },
-  { url: 'images/4.jpg' },
-  { url: 'images/5.jpg' },
-  { url: 'images/6.jpg' },
-  { url: 'images/7.jpg' }
-];
+const IMAGES = [{ url: 'images/1.jpg' }, { url: 'images/2.jpg' }, { url: 'images/3.jpg' }, { url: 'images/7.jpg' }];
 
 type SliderOptions = {
   useGPURender: boolean;
   showNavs: boolean;
   showBullets: boolean;
+  loop: boolean;
+  autoPlay: boolean;
+  autoPlayDelay: number;
   navStyle: 1 | 2;
   navSize: number;
   navMargin: number;
@@ -40,6 +36,9 @@ const App: React.FC = () => {
     useGPURender: true,
     showNavs: true,
     showBullets: true,
+    loop: true,
+    autoPlay: true,
+    autoPlayDelay: 2,
     navStyle: 1,
     navSize: 50,
     navMargin: 30,
@@ -78,13 +77,7 @@ const App: React.FC = () => {
         case 'navStyle':
           setSliderOptions({ ...sliderOptions, navStyle: value as 1 | 2 });
           break;
-        case 'useGPURender':
-        case 'showNavs':
-        case 'showBullets':
-        case 'duration':
-        case 'bgColor':
-        case 'navSize':
-        case 'navMargin':
+        default:
           setSliderOptions({ ...sliderOptions, [key]: value });
           break;
       }
@@ -100,7 +93,7 @@ const App: React.FC = () => {
   );
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center' }} className="root">
       <CssBaseline />
       <AppBar style={{ position: 'relative', height: 140, textAlign: 'center' }}>
         <h1 style={{ marginBottom: 5 }}>React Simple Image Slider Example</h1>
@@ -122,6 +115,10 @@ const App: React.FC = () => {
         images={IMAGES}
         showBullets={sliderOptions.showBullets}
         showNavs={sliderOptions.showNavs}
+        loop={sliderOptions.loop}
+        autoPlay={sliderOptions.autoPlay}
+        autoPlayDelay={sliderOptions.autoPlayDelay}
+        startIndex={0}
         useGPURender={sliderOptions.useGPURender}
         navStyle={sliderOptions.navStyle}
         navSize={sliderOptions.navSize}
@@ -166,8 +163,19 @@ const App: React.FC = () => {
             <Select value={sliderOptions.duration} onChange={onChangeSelect} inputProps={{ name: 'duration' }}>
               <MenuItem value={0.3}>0.3</MenuItem>
               <MenuItem value={0.5}>0.5</MenuItem>
-              <MenuItem value={0.7}>0.9</MenuItem>
+              <MenuItem value={0.7}>0.7</MenuItem>
               <MenuItem value={1.2}>1.2</MenuItem>
+            </Select>
+          </FormControl>
+        </ListItem>
+        <ListItem>
+          <FormControl>
+            <InputLabel>autoPlayDelay</InputLabel>
+            <Select value={sliderOptions.autoPlayDelay} onChange={onChangeSelect} inputProps={{ name: 'autoPlayDelay' }}>
+              <MenuItem value={1.5}>1.5</MenuItem>
+              <MenuItem value={2.0}>2</MenuItem>
+              <MenuItem value={2.5}>2.5</MenuItem>
+              <MenuItem value={3}>3</MenuItem>
             </Select>
           </FormControl>
         </ListItem>
