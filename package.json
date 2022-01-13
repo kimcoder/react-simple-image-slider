@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "example": "webpack serve",
-    "example:deploy": "webpack --config webpack.config.js & gh-pages -d example",
+    "example:build": "webpack --config webpack.config.js",
     "dev": "rollup -c --watch & npm run example",
     "build": "rollup -c",
     "prebuild": "rm -rf dist",
