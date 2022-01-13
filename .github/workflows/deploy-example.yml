@@ -23,8 +23,8 @@ jobs:
       - name: npm install packages
         run: npm install
 
-      - name: build storybook
-        run: npm run build:storybook
+      - name: build example
+        run: npm run example:build
 
       - name: deploy to S3
         env:
