@@ -1,5 +1,15 @@
 # Change Log
 
+### 2.4.0 (March 05, 2022)
+
+- add `props.image` structure type
+
+### 2.3.0 (October 24, 2022)
+
+- add feature
+  - auto play
+  - loop
+
 ### 2.2.0 (September 19, 2021)
 
 - add className for image slider
