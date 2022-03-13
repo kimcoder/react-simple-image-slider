@@ -24,6 +24,7 @@ type SliderOptions = {
   loop: boolean;
   autoPlay: boolean;
   autoPlayDelay: number;
+  startIndex: number;
   navStyle: 1 | 2;
   navSize: number;
   navMargin: number;
@@ -39,6 +40,7 @@ const App: React.FC = () => {
     loop: true,
     autoPlay: true,
     autoPlayDelay: 2,
+    startIndex: 3,
     navStyle: 1,
     navSize: 50,
     navMargin: 30,
@@ -118,7 +120,7 @@ const App: React.FC = () => {
         loop={sliderOptions.loop}
         autoPlay={sliderOptions.autoPlay}
         autoPlayDelay={sliderOptions.autoPlayDelay}
-        startIndex={0}
+        startIndex={sliderOptions.startIndex}
         useGPURender={sliderOptions.useGPURender}
         navStyle={sliderOptions.navStyle}
         navSize={sliderOptions.navSize}
@@ -131,7 +133,7 @@ const App: React.FC = () => {
         onCompleteSlide={onCompleteSlide}
       />
 
-      <div style={{ margin: '10px' }}>{slideIndexText || `${1} / ${IMAGES.length}`}</div>
+      <div style={{ margin: '10px' }}>{slideIndexText || `${sliderOptions.startIndex + 1} / ${IMAGES.length}`}</div>
 
       <List
         subheader={
