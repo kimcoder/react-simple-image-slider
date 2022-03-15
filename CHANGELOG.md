@@ -1,5 +1,9 @@
 # Change Log
 
+### 2.4.1 (March 05, 2022)
+
+- fix `props.startIndex` bug
+
 ### 2.4.0 (March 05, 2022)
 
 - add `props.image` structure type
