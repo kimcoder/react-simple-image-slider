@@ -67,8 +67,12 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
     autoPlay,
     autoPlayDelay: autoPlayDelay + slideDuration
   });
-  const [currentSliderStyle, setCurrentSlideStyle] = useState(styles.getImageSlide(getURLValueFromImages(images, 0), slideDuration, 0, useGPURender));
-  const [nextSliderStyle, setNextSliderStyle] = useState(styles.getImageSlide(getURLValueFromImages(images, 1), slideDuration, 1, useGPURender));
+  const [currentSliderStyle, setCurrentSlideStyle] = useState(
+    styles.getImageSlide(getURLValueFromImages(images, startIndex), slideDuration, 0, useGPURender)
+  );
+  const [nextSliderStyle, setNextSliderStyle] = useState(
+    styles.getImageSlide(getURLValueFromImages(images, startIndex + 1), slideDuration, 1, useGPURender)
+  );
   const isSlidingRef = useRef(false);
 
   const handleClick = useCallback(
