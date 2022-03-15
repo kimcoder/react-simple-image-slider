@@ -134,12 +134,12 @@ If You want to see more detail,<br>
 // npm
 npm run example         // run a test app(demo) by webpack dev server
 npm run build           // build the image slider component by rollup
-npm run build:watch     // build watch mode
+npm run dev     // build watch mode
 
 // yarn
 yarn example
 yarn build
-yarn build:watch
+yarn dev
 ```
 
 If you want to run a test app, should build before do that.<br>
