@@ -26,6 +26,7 @@ export type SimpleImageSliderProps = {
   startIndex?: number;
   slideDuration?: number;
   bgColor?: string;
+  bulletColor?: string;
   useGPURender?: boolean;
   navSize?: number;
   navMargin?: number;
@@ -50,6 +51,7 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
   style = undefined,
   slideDuration = 0.5,
   bgColor = '#000',
+  bulletColor,
   useGPURender = true,
   navSize = 50,
   navMargin = 30,
@@ -164,7 +166,7 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
           />
         )}
 
-        <ImageSliderBullets visible={showBullets} length={images.length} currentIdx={slideIdx} onClickBullets={handleClickBullets} />
+        <ImageSliderBullets bulletColor={bulletColor} visible={showBullets} length={images.length} currentIdx={slideIdx} onClickBullets={handleClickBullets} />
       </div>
     </div>
   );
