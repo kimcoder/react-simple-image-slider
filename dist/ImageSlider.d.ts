@@ -1,0 +1,31 @@
+import React from 'react';
+import { ImageSliderNavStyle } from './ImageSliderNavigation';
+declare type URLObject = {
+    url: string;
+};
+export declare type SimpleImageSliderProps = {
+    width: number | string;
+    height: number | string;
+    images: URLObject[] | string[];
+    style?: React.CSSProperties;
+    showNavs: boolean;
+    showBullets: boolean;
+    loop?: boolean;
+    autoPlay?: boolean;
+    autoPlayDelay?: number;
+    startIndex?: number;
+    slideDuration?: number;
+    bgColor?: string;
+    bulletColor?: string;
+    useGPURender?: boolean;
+    navSize?: number;
+    navMargin?: number;
+    navStyle?: ImageSliderNavStyle;
+    onClick?: (idx: number, event: React.SyntheticEvent) => void;
+    onClickNav?: (toRight: boolean) => void;
+    onClickBullets?: (idx: number) => void;
+    onStartSlide?: (idx: number, length: number) => void;
+    onCompleteSlide?: (idx: number, length: number) => void;
+};
+declare const SimpleImageSlider: React.FC<SimpleImageSliderProps>;
+export default SimpleImageSlider;
